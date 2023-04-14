@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINK ANIMACIONES  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- LINK CSS-->
+    <link rel="stylesheet" href="../css/formulario.css"> 
+    <!--LINK ARCHIVOS JS-->
+    <script defer src="../js/formulario.json.js"></script>
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+    <title>Formulario de registro</title>
+</head>
+<body>
+    <!-- ID Particles.js -->
+    <div id="particles-js"></div>
+<!--FORMULARIO-->
+    <h1>Formulario de contacto</h1>
+    <input type="text" id="inputNombre" placeholder="Ingresa tu nombre">
+    <input type="number" id="inputEdad" placeholder="Ingresa tu edad">
+    <input type="Email" id="inputEmail" placeholder="Ingresa tu Email">
+    <input type="tel" id="inputTelefono" placeholder="55-55-55-55-55" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required>
+    <button class="btn-link-2" id="btnEnviar">Enviar</button>
+<!--FORMULARIO-->
+    <!--Botón incio (Regresar a la pag principal)-->
+    <a href="../index.html">
+        <button class="btn-link-2">Inicio</button>
+    </a>
+    <!-- JS Particles.js (Carga el archivo desde carpeta particulas) -->
+    <script src="../js/particulas/particles.js-master/particles.min.js"></script>
+    <script src="../js/particulas/app.js"></script>
+     <!-- JS FontAwesome -->
+    <script src="https://kit.fontawesome.com/8279426717.js" crossorigin="anonymous"></script>
+   
+    <footer>
+        <p><small>Sitio hecho por Vianey - ViviDevil🌈</small></p>
+    </footer>
+</body>
+</html>
