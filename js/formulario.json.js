@@ -36,10 +36,12 @@ function recuperarDatosDeFormulario() {
     //debugger
     //*.parse(): método para cambiar de string a objeto, arrays, constantes 
     const datosDeFormulario = JSON.parse(localStorage.getItem("datosDeForm"))
-            inputNombre.value = datosDeFormulario.nombre
-            inputEdad.value = datosDeFormulario.edad
-            inputEmail.value = datosDeFormulario.email
-            inputTelefono.value = datosDeFormulario.telefono
+    if (datosDeFormulario){
+        inputNombre.value = datosDeFormulario.nombre
+        inputEdad.value = datosDeFormulario.edad
+        inputEmail.value = datosDeFormulario.email
+        inputTelefono.value = datosDeFormulario.telefono
+    }
 }
 //LLAMAR FUNCION PARA QUE CARGUE LOS DATOS AUTOMATICAMENTE
 recuperarDatosDeFormulario()
