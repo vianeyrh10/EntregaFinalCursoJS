@@ -136,9 +136,18 @@ body {
     font-weight: 400;
 }
 
+.colorVerde {
+    color: #3dff3e;
+}
+.btn-aceptar{
+    color: #000;
+    
+}
 footer {
     text-align: center;
 }
+
+
 @keyframes parpadeo  {
     0%, 41%, 45%, 47%, 49.5%, 100%  { 
         opacity: 1;

@@ -87,8 +87,8 @@ button:hover {
     border-style: solid;
     border-color: 1px solid #3dff3e;
     box-shadow: 10px 6px 6px #3dff3e;
-    width: 310px;
-    height: 310px;
+    width: 300px;
+    height: 335px;
 }
 
 .div-card:hover {
@@ -107,6 +107,9 @@ button:active {
     background-color: black;
     color: whitesmoke;
     border-color: black;
+}
+.irCarrito{
+    display:inline-block;
 }
 footer {
     text-align: center;

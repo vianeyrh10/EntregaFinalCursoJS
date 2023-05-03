@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="../css/shop.css"> 
     <!--LINK ARCHIVOS JS-->
     <script defer src="../js/shop.js"></script>
-    <script src="/js/variables.js"></script>
+    <!--LIBRERIA SWEETALERT-->
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- FUENTES -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
     <title>Shop</title>
@@ -26,15 +27,17 @@
             <!-- <h3 id="nota">Nota: Todos los resultados se ven por consola</h2> -->
             <!-- CARRITO -->
             <div class="carrito">
-                <p>🛒:<span>0</span></p>
-                <!-- <button id="Comprar">Comprar</button>
-                <button id="irCarrito">Ver carrito</button> -->
+                <p>Cantidad de productos 🛒:<span> 0 </span>
+                    <button id="irCarrito">Ver carrito</button>
+                    <div class="btnsCarrito"></div>
+                </p>
             </div>
             <!-- INPUT BUSQUEDA -->
             <div>
                 <input type="search" id="inputSearch" placeholder="Buscar prenda por nombre">
                 <button id="btnBuscar">Buscar</button>
                 <!-- <button id="BuscarID">Buscar ID</button> -->
+                
             </div>
         </div>
     </header>

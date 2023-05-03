@@ -1,11 +1,5 @@
-/*
-CURSO: CODER HOUSE JAVASCRIPT #39490
-NOMBRE: BRENDA VIANEY RAMIREZ HERNANDEZ
-LS/SS: permiten guardar pares de clave/valor en el navegador.
- * key(índice) – obtener la clave de una posición dada.
- * length – el número de ítems almacenados.
- * PRE-ENTREGA 3: LS y JSON
- */
+//CURSO: CODER HOUSE JAVASCRIPT #39490
+//NOMBRE: BRENDA VIANEY RAMIREZ HERNANDEZ
 
 //VARIABLES PARA GUARDAR INFORMACIÓN CON LOCAL STORAGE
 const inputNombre  = document.querySelector("#inputNombre")
@@ -13,28 +7,43 @@ const inputEdad  = document.querySelector("#inputEdad")
 const inputEmail  = document.querySelector("#inputEmail")
 const inputTelefono  = document.querySelector("#inputTelefono")
 const botonEnviar = document.querySelector("#btnEnviar")
+const botonLimpiarCampos = document.querySelector("#btnLimpiarCampos")
 
 //FUNCION PARA GUARDAR LOS DATOS DE FORMULARIO EN LS setItem(): Almacena un par  Clave - Valor 
 function guardarFormularioEnLS(){
-    //Constante (OBJETO LITERAl) para guardar todo en una sola clave (JSON)
-    const datosDeFormulario =   { 
-                                nombre: inputNombre.value, 
-                                edad: inputEdad.value, 
-                                email: inputEmail.value, 
-                                telefono: inputTelefono.value
-                                }
-    /*Objeto global JSON: JavaScript Object Notation
-     * datosDeFormulario.nombre: me devuelve el valor almacenado
-     *.stringify(): método estático convierte un valor de JavaScript en una cadena (string) JSON
-     */
-    //Cambia de OBJETO a STRING
-                        //Clave         Valor
-    localStorage.setItem("datosDeForm", JSON.stringify(datosDeFormulario))
+    if (inputNombre.value === "" || inputEdad.value === "" || inputEmail.value === "" || inputTelefono.value === "" ) {
+        Swal.fire({
+            icon: 'Error',
+            title: '<span class="colorVerde">Verificar datos ingresados</span>',
+            html: '<b class="colorVerde">⛔️ Debes llenar todos los campos.</b>',
+            background: '#000',
+            confirmButtonText: '<b class="btn-aceptar">Aceptar</b>',
+            confirmButtonColor: '#3dff3e',
+            timer: 6000,
+            })
+    }else {
+        //Constante (OBJETO LITERAl) para guardar todo en una sola clave (JSON)
+            const datosDeFormulario =   { 
+                nombre: inputNombre.value, 
+                edad: inputEdad.value, 
+                email: inputEmail.value, 
+                telefono: inputTelefono.value
+                }
+        localStorage.setItem("datosDeForm", JSON.stringify(datosDeFormulario))
+        Swal.fire({
+            icon: 'success',
+            title: '<span class="colorVerde">Datos enviados!</span>',
+            html: '<b class="colorVerde">Gracias por llenar el formulario</b>',
+            background: '#000',
+            confirmButtonText: '<b class="btn-aceptar">Aceptar</b>',
+            confirmButtonColor: '#3dff3e',
+            timer: 7000,
+        })
+    }
+    
 }
 //FUNCION PARA BUSCAR getItem(): Obtener el valor por medio de la clave.
 function recuperarDatosDeFormulario() {
-    //debugger
-    //*.parse(): método para cambiar de string a objeto, arrays, constantes 
     const datosDeFormulario = JSON.parse(localStorage.getItem("datosDeForm"))
     if (datosDeFormulario){
         inputNombre.value = datosDeFormulario.nombre
@@ -43,14 +52,15 @@ function recuperarDatosDeFormulario() {
         inputTelefono.value = datosDeFormulario.telefono
     }
 }
-//LLAMAR FUNCION PARA QUE CARGUE LOS DATOS AUTOMATICAMENTE
 recuperarDatosDeFormulario()
-
-//FUNCION PARA ELIMINAR removeItem(): Elimina la clave y su valor.
-// function quitarDatoDeLS (){
-//     localStorage.removeItem("edad")
-// }
-
 //EVENTO PARA ESCUCHAR AL BOTON DEL FORMULARIO 
 botonEnviar.addEventListener("click", guardarFormularioEnLS)
 
+//FUNCIÓN PARA LIMPIAR CAMPOS 
+function limpiarCampos (){
+        inputNombre.value = ""
+        inputEdad.value = ""
+        inputEmail.value = ""
+        inputTelefono.value = ""
+}
+botonLimpiarCampos.addEventListener("click", limpiarCampos)

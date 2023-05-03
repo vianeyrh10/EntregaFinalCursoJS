@@ -10,11 +10,13 @@
     <!-- LINK CSS-->
     <link rel="stylesheet" href="./css/styles.css">   
     <!--LINK ARCHIVOS JS-->
-    <script defer src="./js/main.js"></script>
-    <script src="./js/variables.js"></script>
+    <!-- <script defer src="./js/main.js"></script> -->
+    <script defer src="./js/cotizar.js"></script>
+    <!--LIBRERIA SWEETALERT-->
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
-    <title>3ra Entrega: Simulador interactivo Ramirez Hernandez Brenda Vianey</title>
+    <title>Simulador interactivo Ramirez Hernandez Brenda Vianey</title>
 </head>
 <body>
     <!-- ID Particles.js -->
@@ -23,14 +25,14 @@
         <!-- Barra de navegación -->
         <nav class="barra-navegacion">
             <ul>
-                <li><a href="#">Acerca de</a></li>
+                <!-- <li><a href="#">Acerca de</a></li> -->
                 <li><a href="/html/formulario.html">Registro</a></li>
                 <li>
                     <a href="#" class="logo">      
                         <i class="fa-brands fa-freebsd"></i>
                     </a>
                 </li>
-                <li><a href="#">Tatuadorxs</a></li>
+                <!-- <li><a href="#">Tatuadorxs</a></li> -->
                 <li><a href="/html/Shop.html">Shop</a></li>
             </ul>
         </nav>
@@ -46,7 +48,7 @@
                     <p>Un lugar donde te sentiras segura y lejos del acoso, tambien son bienvenidxs todas las personas de la comunidad LGBTTIQ+.
                     </p>
                     <p>Cotiza tu tatuaje con nosotrxs y sientete segurx.</p>
-                    <button onclick="cotizar()" class="btn-link">Cotizar</button>
+                    <button id="btnCotizar" class="btn-link">Cotizar</button>
                 </article>
             </div>
         </div>
