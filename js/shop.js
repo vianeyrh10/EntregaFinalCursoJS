@@ -10,7 +10,7 @@ const btnIrCarrito = document.querySelector("#irCarrito");
 const btnsCarrito = document.querySelector(".btnsCarrito");
 //const carritoVacio = document.querySelector(".carritoVacio");
 const arrayProductos = [];
-const URL = '../js/productos.json'
+const URL = '/js/productos.json'
 
 fetch(URL)
         .then((respuesta)=> respuesta.json())
